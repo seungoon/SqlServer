@@ -1,0 +1,29 @@
+select
+	GETDATE() + 1 as “ú”‰ÁŽZ1
+	,DATEADD(d, 1, GETDATE()) as “ú”‰ÁŽZ2
+	,DATEADD(m, -1, GETDATE()) as ŒŽ”‰ÁŽZ
+	,DATEADD(yy, 1, GETDATE()) as ”N”‰ÁŽZ
+	,DATEADD(ww, -1, GETDATE()) as T”‰ÁŽZ
+	,DATEDIFF(d, '2005/01/01', GETDATE()) as Œo‰ß“ú”
+	,DATEPART(d, GETDATE()) as “ú
+	,DATEPART(y, GETDATE()) as ”NŠÔ’ÊŽZ“ú
+	,DATEPART(hh, GETDATE()) as Žž
+	,DATEPART(n, GETDATE()) as •ª
+	,DATEPART(s, GETDATE()) as •b
+	,DATEPART(ms, GETDATE()) as milli•b
+	,DATEPART(m, GETDATE()) as ŒŽ
+	,DATEPART(w, GETDATE()) as —j“ú
+	,DATEPART(ww, GETDATE()) as T
+	,DATEPART(yyyy, GETDATE()) as ”N
+	,CONVERT(varchar, GETDATE(),120) as “ú•t•ÒW1
+	,CONVERT(varchar, GETDATE(),111) as “ú•t•ÒW2
+	,CONVERT(varchar, GETDATE(),11) as “ú•t•ÒW3
+	,CONVERT(varchar, GETDATE(),112) as “ú•t•ÒW2
+	,CONVERT(varchar, GETDATE(),12) as “ú•t•ÒW3
+	,CONVERT(NVARCHAR(10), getdate(), 111) as “ú•t•ÒW4
+	,CONVERT(NVARCHAR(8), getdate(), 112) as “ú•t•ÒW5
+	,CONVERT(NVARCHAR(12), getdate(), 114) as “ú•t•ÒW6
+	,replace(CONVERT(NVARCHAR(12), getdate(), 114),':','') as “ú•t•ÒW7
+	,FORMAT(getdate(), 'yyyyMMdd HHmmssfff') as “ú•t•ÒW8
+
+

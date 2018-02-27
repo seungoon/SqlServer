@@ -1,0 +1,15 @@
+MERGE INTO m_buyercode TBL1
+USING mdm_pool_buyercode TBL2
+ ON TBL1.value = TBL2.value
+ WHEN NOT MATCHED THEN
+ INSERT 
+ (
+	value,
+	description
+ )
+ VALUES
+ (
+	TBL2.value,
+	TBL2.description
+ );
+ 

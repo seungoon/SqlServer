@@ -1,0 +1,2 @@
+select CHARINDEX('A', systemkbn), PATINDEX('[A-Z][A-Z][A-Z]',systemkbn)
+ from mdm_systeminfo with(nolock) 

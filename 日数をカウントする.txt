@@ -1,0 +1,1 @@
+select DATEDIFF(day, CAST('“ú•tFROM' AS DATETIME), CAST('“ú•tTO' AS DATETIME)) + 1 as '“ú”'

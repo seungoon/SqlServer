@@ -1,0 +1,14 @@
+UPDATE
+    T
+SET
+    T.col1 = OT.col1,
+    T.col2 = OT.col2
+FROM
+    Some_Table T
+INNER JOIN
+    Other_Table OT
+ON
+    T.id = OT.id
+WHERE
+    T.col3 = 'cool'
+    

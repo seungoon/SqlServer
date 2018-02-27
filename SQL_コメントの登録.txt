@@ -1,0 +1,31 @@
+EXEC sys.sp_addextendedproperty  @name=N'mdm_systeminfoテーブルのコメント'
+                                ,@value=N'システム区分'
+                                ,@level0type=N'SCHEMA'
+                                ,@level0name=N'dbo'
+                                ,@level1type=N'TABLE'
+                                ,@level1name=N'mdm_systeminfo'
+                                ,@level2type=N'COLUMN'
+                                ,@level2name=N'systemkbn';
+SELECT
+	*
+FROM
+	INFORMATION_SCHEMA.COLUMNS AS TBL1
+	LEFT JOIN
+		(
+		SELECT
+			 t.name    AS TABLE_NAME
+			,c.name    AS COLUMN_NAME
+			,ep.value  AS COMMNET
+		FROM
+			 sys.tables AS t
+			,sys.columns AS c
+			,sys.extended_properties AS ep
+		WHERE
+			t.object_id = c.object_id
+			AND c.object_id = ep.major_id
+			AND c.column_id = ep.minor_id
+		) TBL5
+	ON  TBL1.TABLE_NAME = TBL5.TABLE_NAME
+	AND TBL1.COLUMN_NAME = TBL5.COLUMN_NAME;
+
+

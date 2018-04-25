@@ -23,4 +23,8 @@
  　　　DROP VIEW '削除対象ビュー名';
 　　 GO
 
+６．Functionを確認・削除する。
+　・ IF OBJECT_ID ('削除対象Function名', 'FN') IS NOT NULL
+	     DROP FUNCTION 削除対象Function名;
+     GO
 

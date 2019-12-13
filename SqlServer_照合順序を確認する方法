@@ -1,3 +1,6 @@
 SELECT CONVERT (varchar(256), SERVERPROPERTY('collation'));
 or
 EXECUTE sp_helpsort;
+
+SQL Serverでは、照合順序の設定により、どちらでも選べるようだ。
+例えば、"Japanese_CI_AS"のように"CI"を含む場合は区別しない。"CS"を含む場合は区別する。

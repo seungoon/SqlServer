@@ -1,0 +1,3 @@
+SELECT CONVERT (varchar(256), SERVERPROPERTY('collation'));
+or
+EXECUTE sp_helpsort;

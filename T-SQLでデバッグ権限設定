@@ -1,0 +1,2 @@
+※以下のSQL文を実行する。
+  sp_addsrvrolemember 'pcのドメイン\pcのログインユーザ','sysadmin'

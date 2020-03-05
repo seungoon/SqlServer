@@ -1,0 +1,36 @@
+
+BEGIN TRY
+        -- トランザクション開始
+        BEGIN TRANSACTION;
+
+        -- クリア
+        DELETE FROM TAEGET_TABLE;
+
+        INSERT INTO 
+            TAEGET_TABLE
+            SELECT
+                FT.CD,
+                FT.FIELD1,
+                FT.FIELD2
+            FROM
+                FROM_TABLE FT
+
+        -- コミット
+        COMMIT TRANSACTION;
+    END TRY
+
+    BEGIN CATCH 
+        -- エラー情報
+        SELECT
+            ' [ERR-LINE] ' + CONVERT(VARCHAR, IsNull(ERROR_LINE(),''))
+            + ' [ERR-MESSAGE] ' + IsNull(ERROR_MESSAGE(),'')
+            + ' [ERR-NUMBER] ' +  CONVERT(VARCHAR, IsNull(ERROR_NUMBER(),''))
+            + ' [ERR-PROCEDURE] ' +  CONVERT(VARCHAR, IsNull(ERROR_PROCEDURE(),''))
+            + ' [ERR-SEVERITY] ' +  CONVERT(VARCHAR, IsNull(ERROR_SEVERITY(),''))
+            + ' [ERR-STATE] ' +  CONVERT(VARCHAR, IsNull(ERROR_STATE(),''));
+
+        -- ロールバック
+        ROLLBACK TRANSACTION;
+        THROW;
+
+    END CATCH;
